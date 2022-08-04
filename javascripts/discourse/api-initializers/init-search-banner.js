@@ -26,11 +26,10 @@ export default apiInitializer("0.8", (api) => {
         composerController.open({ action: Composer.CREATE_TOPIC, draftKey: Composer.DRAFT });
       };
       return helper.h("button#create-new", {
-        className: "btn fa fa-plus",
+        className: "btn fa fa-plus create-topic-button",
         title: "Create",
         onclick: createTopic
-      }, "{{theme-i18n\n" +
-        "                        \"search_banner.question\"}}");  // ''-this is 'text' for the button, change as needed.
+      }, 'test' );  // ''-this is 'text' for the button, change as needed.
     }
   });
 
