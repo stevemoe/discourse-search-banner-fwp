@@ -14,47 +14,19 @@ export default apiInitializer("0.8", (api) => {
     },
   });
 
-  const { iconNode } = require("discourse-common/lib/icon-library");
-
-  api.decorateWidget("header-buttons:after", helper => {
-    if (!api.getCurrentUser()) return;
-
-    let container = api.container,
-        ntb_text = settings.New_topic_button_text,
-        ntb_title = settings.New_topic_button_title.length
-            ? settings.New_topic_button_title
-            : ntb_text,
-        ntb_icon = settings.New_topic_button_icon,
-        ntb_button_class = "btn btn-default btn btn-icon-text",
-        ntb_button_helper = "button#new-create-topic",
-        ntb_label_helper = "span.d-button-label",
-        composerModal = require("discourse/models/composer").default,
-        composerController = container.lookup("controller:composer");
-
-    const createTopic = function() {
-      const controller = container.lookup("controller:navigation/category"),
-          category = controller.get("category.id"),
-          topicCategory = container
-              .lookup("route:topic")
-              .get("context.category.id"),
-          categoryd = topicCategory ? topicCategory : category;
-
-      composerController.open({
-        action: composerModal.CREATE_TOPIC,
-        categoryId: categoryd,
-        draftKey: composerModal.DRAFT
-      });
-    };
-
-    return helper.h(
-        ntb_button_helper,
-        {
-          className: ntb_button_class,
-          title: ntb_title,
-          onclick: createTopic
-        },
-        [iconNode(ntb_icon), helper.h(ntb_label_helper, ntb_text)]
-    );
+  api.decorateWidget('search-widget:after', helper => {
+    if (Discourse.User.current()) {
+      const createTopic = function() {
+        const Composer = require('discourse/models/composer').default;
+        const composerController = Discourse.__container__.lookup('controller:composer');
+        composerController.open({ action: Composer.CREATE_TOPIC, draftKey: Composer.DRAFT });
+      }
+      return helper.h('button#create-new', {
+        className: "btn fa fa-plus",
+        title: "Create",
+        onclick: createTopic
+      }, '' );  // ''-this is 'text' for the button, change as needed.
+    }
   });
 
   // Simplified version of header search theme component
