@@ -10,10 +10,7 @@
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">{{theme-i18n
                         "search_banner.question"}}
                 </button>
-
-                <DButton @class={{this.btnClass}} @id="create-topic" @action={{this.action}} @icon="plus" @disabled={{this.disabled}} @label={{this.label}} />
-
-
+                <CreateTopicButton @canCreateTopic={{true}} />
             </div>
         </div>
     </div>
