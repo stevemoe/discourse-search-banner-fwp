@@ -25,11 +25,10 @@ export default apiInitializer("0.8", (api) => {
         const composerController = Discourse.__container__.lookup("controller:composer");
         composerController.open({ action: Composer.CREATE_TOPIC, draftKey: Composer.DRAFT });
       };
-      return helper.h("button#create-new", {
-        className: "btn fa fa-plus create-topic-button",
-        title: "Create",
+      return helper.h("button", {
+        className: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full",
         onclick: createTopic
-      }, 'test' );  // ''-this is 'text' for the button, change as needed.
+      }, '{{theme-i18n "search_banner.question"}}' );  // ''-this is 'text' for the button, change as needed.
     }
   });
 
