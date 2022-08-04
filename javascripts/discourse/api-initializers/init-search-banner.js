@@ -11,21 +11,22 @@ export default apiInitializer("0.8", (api) => {
   api.registerConnectorClass(disableConnectorName, "search-banner", {
     shouldRender() {
       return false;
-    },
+    }
   });
 
-  api.decorateWidget('search-widget:after', helper => {
+  api.createWidget("create-topic", helper => {
     if (Discourse.User.current()) {
       const createTopic = function() {
-        const Composer = require('discourse/models/composer').default;
-        const composerController = Discourse.__container__.lookup('controller:composer');
+        const Composer = require("discourse/models/composer").default;
+        const composerController = Discourse.__container__.lookup("controller:composer");
         composerController.open({ action: Composer.CREATE_TOPIC, draftKey: Composer.DRAFT });
-      }
-      return helper.h('button#create-new', {
+      };
+      return helper.h("button#create-new", {
         className: "btn fa fa-plus",
         title: "Create",
         onclick: createTopic
-      }, '' );  // ''-this is 'text' for the button, change as needed.
+      }, "{{theme-i18n\n" +
+        "                        \"search_banner.question\"}}");  // ''-this is 'text' for the button, change as needed.
     }
   });
 
@@ -43,7 +44,7 @@ export default apiInitializer("0.8", (api) => {
       return {
         formFactor: attrs.formFactor || "menu",
         showHeaderResults: false,
-        inTopicContext: attrs.inTopicContext,
+        inTopicContext: attrs.inTopicContext
       };
     },
 
@@ -83,7 +84,7 @@ export default apiInitializer("0.8", (api) => {
         logSearchLinkClick({
           searchLogId,
           searchResultId,
-          searchResultType,
+          searchResultType
         });
       }
 
@@ -107,7 +108,7 @@ export default apiInitializer("0.8", (api) => {
           this.attach("button", {
             icon: "search",
             className: "search-icon",
-            action: "showResults",
+            action: "showResults"
           })
         );
       }
@@ -129,21 +130,21 @@ export default apiInitializer("0.8", (api) => {
           );
         });
       }
-    },
+    }
   });
 
   api.createWidget("search-widget", {
-    tagName: "div.search-widget",
+    tagName: "div.search-widget"
   });
 
-  api.decorateWidget("search-widget:after", function (helper) {
+  api.decorateWidget("search-widget:after", function(helper) {
     const searchWidget = helper.widget;
     const searchMenuVisible = searchWidget.state.searchVisible;
 
     if (!searchMenuVisible && !searchWidget.attrs.topic) {
       return helper.attach("search-menu", {
         contextEnabled: searchWidget.state.contextEnabled,
-        formFactor: "widget",
+        formFactor: "widget"
       });
     }
   });
