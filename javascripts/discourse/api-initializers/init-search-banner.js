@@ -18,7 +18,7 @@ export default apiInitializer("0.8", (api) => {
     tagName: "div.create-topic"
   });
 
-  api.decorateWidget("create-topic", helper => {
+  api.decorateWidget("create-topic:after", helper => {
     if (Discourse.User.current()) {
       const createTopic = function() {
         const Composer = require("discourse/models/composer").default;
