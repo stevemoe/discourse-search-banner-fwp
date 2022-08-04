@@ -10,6 +10,7 @@ $max-width: 600px;
 
 
 .background-img {
+  margin: 1em;
   @if $background-image != "none" {
     background-image: url($background-image);
   } @else {
@@ -20,6 +21,7 @@ $max-width: 600px;
   } @else {
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
