@@ -28,3 +28,10 @@ show_for:
     - everyone
     - logged_in
     - logged_out
+
+language:
+  default: german
+  type: enum
+  choices:
+    - german
+    - english

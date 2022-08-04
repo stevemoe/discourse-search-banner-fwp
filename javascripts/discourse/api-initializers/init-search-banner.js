@@ -18,6 +18,8 @@ export default apiInitializer("0.8", (api) => {
     tagName: "div.create-topic"
   });
 
+
+
   api.decorateWidget("create-topic:after", helper => {
     if (Discourse.User.current()) {
       const createTopic = function() {
@@ -28,7 +30,7 @@ export default apiInitializer("0.8", (api) => {
       return helper.h("button", {
         className: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full",
         onclick: createTopic
-      }, 'search_banner.question' );  // ''-this is 'text' for the button, change as needed.
+      }, 'Frage stellen' );  // ''-this is 'text' for the button, change as needed.
     }
   });
 
