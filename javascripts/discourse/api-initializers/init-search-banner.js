@@ -28,7 +28,7 @@ export default apiInitializer("0.8", (api) => {
       return helper.h("button", {
         className: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full",
         onclick: createTopic
-      }, '{{theme-i18n "search_banner.question"}}' );  // ''-this is 'text' for the button, change as needed.
+      }, 'search_banner.question' );  // ''-this is 'text' for the button, change as needed.
     }
   });
 

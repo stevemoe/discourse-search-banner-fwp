@@ -27,6 +27,12 @@ export default Component.extend({
   },
 
 
+  @onclick("askQuestion")
+  createTopic() {
+    const Composer = require("discourse/models/composer").default;
+    const composerController = Discourse.__container__.lookup("controller:composer");
+    composerController.open({ action: Composer.CREATE_TOPIC, draftKey: Composer.DRAFT });
+  },
   
   @discourseComputed("currentUser")
   displayForUser(currentUser) {
