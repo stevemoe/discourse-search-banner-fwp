@@ -14,6 +14,17 @@ export default apiInitializer("0.8", (api) => {
     },
   });
 
+  var ApplicationRoute = require('discourse/routes/application').default;
+  ApplicationRoute.reopen({
+    actions: {
+      createTopic: function() {
+        var Composer = require('discourse/models/composer').default;
+        composerController = Discourse.__container__.lookup('controller:composer');
+        composerController.open({ action: Composer.CREATE_TOPIC, draftKey: Composer.DRAFT });
+      },
+    }
+  });
+
   // Simplified version of header search theme component
   const searchMenuWidget = api.container.factoryFor("widget:search-menu");
   const corePanelContents = searchMenuWidget.class.prototype["panelContents"];

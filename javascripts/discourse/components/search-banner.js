@@ -26,16 +26,7 @@ export default Component.extend({
     }
   },
 
-  var ApplicationRoute = require('discourse/routes/application').default;
-  ApplicationRoute.reopen({
-    actions: {
-      createTopic: function() {
-        var Composer = require('discourse/models/composer').default;
-        composerController = Discourse.__container__.lookup('controller:composer');
-        composerController.open({ action: Composer.CREATE_TOPIC, draftKey: Composer.DRAFT });
-      },
-    }
-  });
+
   
   @discourseComputed("currentUser")
   displayForUser(currentUser) {
