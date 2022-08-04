@@ -1,6 +1,6 @@
 {{#if shouldDisplay}}
-    <div class="custom-search-banner">
-        <div class="wrap custom-search-banner-wrap">
+    <div class="custom-search-banner grid grid-cols-3">
+        <div class="wrap custom-search-banner-wrap col-span-2">
             <h1>{{theme-i18n "search_banner.headline"}}</h1>
             <p>{{theme-i18n "search_banner.subhead"}}</p>
             <div class="flex justify-between mt-10">
@@ -9,6 +9,9 @@
               {{mount-widget widget="create-topic"}}
             </div>
         </div>
+      <div class="background-img">
+        {{sett}}
+      </div>
     </div>
 {{/if}}
 
