@@ -18,7 +18,7 @@ $max-width: 600px;
   @if $tile-background_image == "true" {
     background-size: auto;
   } @else {
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
   }
 }
