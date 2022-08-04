@@ -29,6 +29,7 @@ export default Component.extend({
 
 
   createTopic() {
+    console.log("test");
     const Composer = require("discourse/models/composer").default;
     const composerController = Discourse.__container__.lookup("controller:composer");
     composerController.open({ action: Composer.CREATE_TOPIC, draftKey: Composer.DRAFT });
