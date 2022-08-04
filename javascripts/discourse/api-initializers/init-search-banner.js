@@ -14,7 +14,11 @@ export default apiInitializer("0.8", (api) => {
     }
   });
 
-  api.createWidget("create-topic", helper => {
+  api.createWidget("create-topic", {
+    tagName: "div.create-topic"
+  });
+
+  api.decorateWidget("create-topic", helper => {
     if (Discourse.User.current()) {
       const createTopic = function() {
         const Composer = require("discourse/models/composer").default;
