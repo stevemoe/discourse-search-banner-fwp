@@ -2,3 +2,12 @@ en:
   search_banner:
     headline: "Welcome to our community"
     subhead: "We're happy to have you here. If you need help, please search before you post."
+    or: "or"
+    question: "Ask your question"
+
+de:
+  search_banner:
+    headline: "Willkommen in der Friends With Plants Community"
+    subhead: "Cool dass du da bist! Such doch nach einem Thema oder stelle deine Fragen."
+    or: "oder"
+    question: "Frage stellen"

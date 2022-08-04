@@ -33,7 +33,6 @@ $max-width: 600px;
   }
 
   > div {
-    margin-top: 10px;
     max-width: $max-width;
   }
 
@@ -59,6 +58,10 @@ $max-width: 600px;
     }
   }
 
+  .search-menu .search-input:focus-within {
+    outline: 0;
+  }
+
   h1 {
     font-size: var(--font-up-6);
     line-height: $line-height-medium;
@@ -69,7 +72,7 @@ $max-width: 600px;
 
   h1,
   p {
-    text-align: center;
+    text-align: start;
   }
 
   .search-icon {
