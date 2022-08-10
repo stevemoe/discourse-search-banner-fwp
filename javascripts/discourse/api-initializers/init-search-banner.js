@@ -38,7 +38,7 @@ export default apiInitializer("0.8", (api) => {
       }
       return helper.h("button", {
         className: "hover:bg-[#001725]/80 bg-[#001725] text-white font-bold py-2 px-4 rounded-full",
-        onClick: login,
+        onClick: login(),
       }, 'Anmelden um eine Frage zu stellen' );
     }
   });
