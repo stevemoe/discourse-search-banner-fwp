@@ -95,7 +95,9 @@ $max-width: 600px;
     order: 2;
     right: 0;
     background: transparent;
-    color: #FBFAF8;
+    .d-icon {
+      color: #FBFAF8;
+    }
     .discourse-no-touch & {
       &:hover {
         background: transparent;
