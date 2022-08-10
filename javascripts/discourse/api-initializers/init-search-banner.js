@@ -31,9 +31,12 @@ export default apiInitializer("0.8", (api) => {
         onclick: createTopic
       }, 'Frage stellen' );
     } else {
+      function showLogin() {
+        this.register.lookup("route:application").send("showLogin");
+      };
       return helper.h("button", {
         className: "hover:bg-[#001725]/80 bg-[#001725] text-white font-bold py-2 px-4 rounded-full",
-        action: "showLogin",
+        onclick: showLogin,
       }, 'Anmelden um eine Frage zu stellen' );
     }
   });
