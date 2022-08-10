@@ -28,7 +28,7 @@ export default apiInitializer("0.8", (api) => {
         composerController.open({ action: Composer.CREATE_TOPIC, draftKey: Composer.DRAFT });
       };
       return helper.h("button", {
-        className: "bg-[#001725]/95 hover:bg-[#001725] text-white font-bold py-2 px-4 rounded-full",
+        className: "bg-[#001725]/95 hover:bg-[#001725] text-white hover:text-slate- font-bold py-2 px-4 rounded-full",
         onclick: createTopic
       }, 'Frage stellen' );
     }
