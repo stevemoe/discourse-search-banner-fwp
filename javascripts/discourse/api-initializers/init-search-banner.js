@@ -32,9 +32,9 @@ export default apiInitializer("0.8", (api) => {
         onclick: createTopic
       }, 'Frage stellen' );
     } else {
-      return helper.h("button", {
+      return helper.h("a", {
         className: "hover:bg-[#001725]/80 bg-[#001725] text-white font-bold py-2 px-4 rounded-full",
-        href: "/login",
+        href: "https://discourse.friends-with-plants.com/login",
       }, 'Anmelden um eine Frage zu stellen' );
     }
   });
