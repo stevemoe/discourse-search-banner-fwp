@@ -1,7 +1,7 @@
 {{#if shouldDisplay}}
   <div class="custom-search-banner flex align-center lg:p-12">
-    <div class="wrap custom-search-banner-wrap grid lg:grid-cols-2 gap-10 max-w-2xl">
-      <h1 class="lg:!text-7xl !text-6xl font-[Inter] text-[#FBFAF8] tracking-wider font-extrabold">{{{theme-i18n "search_banner.headline"}}}</h1>
+    <div class="wrap custom-search-banner-wrap flex flex-wrap gap-30">
+      <h1 class="lg:!text-[6vw] font-[Inter] text-[#FBFAF8] tracking-wider font-extrabold">{{{theme-i18n "search_banner.headline"}}}</h1>
 
       <div class="flex flex-col flex-wrap content-center justify-evenly mt-2 lg:gap-0 gap-10">
         {{mount-widget widget="search-widget"}}
