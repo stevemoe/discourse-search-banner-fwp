@@ -32,8 +32,10 @@ export default apiInitializer("0.8", (api) => {
         onclick: createTopic
       }, 'Frage stellen' );
     } else {
+      let x = 1;
       function login() {
-        console.log("login");
+        x++;
+        console.log(x);
 
       }
       return helper.h("button", {
