@@ -111,7 +111,7 @@ export default apiInitializer("0.8", (api) => {
         contents.push(
           this.attach("button", {
             icon: "search",
-            className: "search-icon",
+            className: "search-icon text-[#FBFAF8]",
             action: "showResults"
           })
         );
