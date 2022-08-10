@@ -32,11 +32,11 @@ export default apiInitializer("0.8", (api) => {
         onclick: createTopic
       }, 'Frage stellen' );
     } else {
-      return (<button
-        class="hover:bg-[#001725]/80 bg-[#001725] text-white font-bold py-2 px-4 rounded-full"
-        onclick="location.href='/login'"
-        type={}"button" >Anmelden um eine Frage zu stellen </button>
-    )
+      return helper.h("button", {
+        className: "hover:bg-[#001725]/80 bg-[#001725] text-white font-bold py-2 px-4 rounded-full",
+        onclick: location.href='/login',
+        type: "button"
+      }, 'Anmelden um eine Frage zu stellen' );
     }
   });
 
