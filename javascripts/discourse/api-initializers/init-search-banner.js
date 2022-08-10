@@ -32,7 +32,7 @@ export default apiInitializer("0.8", (api) => {
         onclick: createTopic
       }, 'Frage stellen' );
     } else {
-      const login = function() {
+      function login() {
         location.href = "/login"
       }
       return helper.h("button", {
