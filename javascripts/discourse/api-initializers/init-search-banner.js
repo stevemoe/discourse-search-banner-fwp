@@ -34,7 +34,7 @@ export default apiInitializer("0.8", (api) => {
     } else {
       return helper.h("a", {
         className: "hover:bg-[#001725]/80 bg-[#001725] text-white font-bold py-2 px-4 rounded-full",
-        href: "https://discourse.friends-with-plants.com/login",
+        href: "https://keycloak.friends-with-plants.com/realms/fwp/protocol/openid-connect/auth?client_id=discourse&nonce=f40dd6e5be12a26cfbd94ce0c19144cb480e9bfd99c899149f0691adc321d1a6&redirect_uri=https%3A%2F%2Fdiscourse.friends-with-plants.com%2Fauth%2Foidc%2Fcallback&response_type=code&scope=openid+email&state=c52a6ce747a29febb6b401ca084b27b99e482cbd686f99cf",
       }, 'Anmelden um eine Frage zu stellen' );
     }
   });
