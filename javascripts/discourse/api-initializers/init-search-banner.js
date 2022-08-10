@@ -33,7 +33,8 @@ export default apiInitializer("0.8", (api) => {
       }, 'Frage stellen' );
     } else {
       function login() {
-        location.href = "/login"
+        console.log("login");
+        location.href = "/login";
       }
       return helper.h("button", {
         className: "hover:bg-[#001725]/80 bg-[#001725] text-white font-bold py-2 px-4 rounded-full",
